@@ -1,10 +1,11 @@
 :root{
   --mainBlue:#2a2a72;
-  --lightBlue:#009ffd;
+  --lightBlue:#BCD4DE;
   --mainWhite:#ffffff;
   --mainGrey:#f3f3f3;
   --mainDark:#232528;
   --mainYellow:#ffa400;
+  --mainPurple: #CFC6DA;
 }
 
 body{
@@ -35,4 +36,10 @@ body{
   cursor:pointer;
   color:var(--mainYellow);
   font-size: 1.2rem;
+}
+
+footer{
+  background: var(--mainPurple);
+  padding: 0.5rem 1rem;
+  height: 250px;
 }
