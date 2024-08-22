@@ -32,6 +32,7 @@ display:flex;
 justify-content: space-between;
 padding:0.1rem 1rem;
 .menu{display:flex;align-items:center;}
+.menu ul{list-style:none;margin-right:20px}
 .navbar-brand{max-width:80px;}
 .nav-link{color:var(--mainDark)!important;font-szie:1.3rem;text-transform:uppercase;}
 `
