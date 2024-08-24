@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import ProductList from './components/ProductList';
 import Default from './components/Default';
+import Details from './components/Details';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
         <Routes>
         <Route exact path="/" element={<ProductList/>} />
+        <Route path="/details" element={<Details/>} />
         <Route element={<Default/>} />
         </Routes>
       <Footer />
