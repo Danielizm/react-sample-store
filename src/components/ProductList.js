@@ -2,16 +2,17 @@ import React,{Component} from 'react';
 import Product from './Product';
 import Title from './Title'
 import {ProductConsumer} from '../context'
+import styled from 'styled-components';
 
 export default class ProductList extends Component{
 	render(){
 		return(
 			<div>
-			    <React.Fragment>
+			    <ProductListWrap>
 			    	<div className="py-5">
 			    	<div className="container">
 			    	<Title name="our" title="products"/>
-			    	<div className="row">
+			    	<div className="product-list row">
 			    	<ProductConsumer>
 			    		{ value =>{
 			    			return value.products.map(product => {
@@ -22,9 +23,12 @@ export default class ProductList extends Component{
 			    	</div>
 			    	</div>
 			    	</div>
-			    </React.Fragment>
+			    </ProductListWrap>
 				{/*<Product />*/}
 			</div>
 			);
 	}
 }
+
+const ProductListWrap = styled.div`
+`;

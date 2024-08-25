@@ -1,7 +1,7 @@
-import React from 'react';
+import React,{createContext} from 'react';
 import { storeProducts, detailProduct } from './data'
 
-const ProductContext = React.createContext();
+const ProductContext = createContext();
 
 class ProductProvider extends React.Component {
 

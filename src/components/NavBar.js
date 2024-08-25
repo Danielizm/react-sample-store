@@ -6,7 +6,6 @@ import { ButtonContainer } from './Button';
 
 export default function NavBar(){
 	return(
-		<div>
 			<NavWrapper className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
 				<Link to="/">
 					<img src={logo} alt="store" className="navbar-brand"/>
@@ -22,11 +21,13 @@ export default function NavBar(){
 				    </Link>
                 </div>
 			</NavWrapper>
-		</div>
 	);
 }
 
 const NavWrapper = styled.nav`
+position:sticky;
+top:0;
+z-index:100;
 background:var(--mainWhite)!important;
 display:flex;
 justify-content: space-between;

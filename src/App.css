@@ -14,7 +14,7 @@ body{
   color:var(--mainDark)!important;
 }
 .text-title{
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Oswald', cursive;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
@@ -41,5 +41,5 @@ body{
 footer{
   background: var(--mainPurple);
   padding: 0.5rem 1rem;
-  height: 250px;
+  height: 200px;
 }
