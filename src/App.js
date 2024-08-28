@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import ProductList from './components/ProductList';
+import Cart from './components/Cart/Cart';
 import Default from './components/Default';
 import Details from './components/Details';
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
         <Route exact path="/" element={<ProductList/>} />
         <Route path="/details" element={<Details/>} />
+        <Route path="/Cart" element={<Cart/>} />
         <Route element={<Default/>} />
         </Routes>
       <Footer />

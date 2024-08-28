@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../logo.png';
 import styled from 'styled-components';
-import { ButtonContainer } from './Button';
+import CartIcon from './CartIcon';
 
 export default function NavBar(){
 	return(
@@ -16,9 +16,7 @@ export default function NavBar(){
 				    	<Link to="/" className="nav-link">Products</Link>
 				    	</li>
 				    </ul>
-				    <Link to="/cart" className="ml-auto">
-				    <ButtonContainer><span className="mr-2"><i className="fas fa-cart-plus"/></span>My cart</ButtonContainer>
-				    </Link>
+				    <CartIcon />
                 </div>
 			</NavWrapper>
 	);

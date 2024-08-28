@@ -31,11 +31,7 @@ body{
   background: var(--mainDark)!important;
   color: var(--mainWhite)!important;
 }
-.cart-icon{
-  cursor:pointer;
-  color:var(--mainYellow);
-  font-size: 1.2rem;
-}
+
 
 footer{
   background: var(--mainPurple);
