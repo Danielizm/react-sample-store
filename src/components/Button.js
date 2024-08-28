@@ -8,7 +8,6 @@ background:transparent;
 border:0.15rem solid var(--lightBlue);
 border-color:${props=>props.cart?"var(--mainYellow)":"var(--mainPurple)"};
 color:${props=>props.cart?"var(--mainYellow)":"var(--mainPurple)"};
-border-radius:5px;
 padding:0.5rem 1rem;
 cursor:pointer;
 margin:0.2rem 0.5rem 0.2rem 0;

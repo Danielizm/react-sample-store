@@ -4,6 +4,19 @@ import { Link } from 'react-router-dom';
 import { ButtonContainer } from './Button';
 
 export default class Details extends Component {
+	constructor() {
+		super();
+		this.state = {count: 1,loading:false};
+	}
+	increseCount = () => {
+		this.setState({count: this.state.count + 1});
+	}
+	decreseCount = () => {
+		this.state.count < 1 ? this.setState({count: 1}) : this.setState({count: this.statecount - 1});
+	}
+	setLoading = () => {
+		this.setState({loading: !this.state.loading});
+	}
     render() {
         return (
             <ProductConsumer>
@@ -24,10 +37,18 @@ export default class Details extends Component {
 						<p className="text-capitalize font-weight-bold mt-3 mb-0">some info abdout the product : </p>
 						<p className="text-muted lead">{info}</p>
 						<div>
+						<div className="d-flex mb-3">
+                        <span className="btn btn-black mx-1" onClick={this.decreseCount}>-</span>
+                        <span className="btn btn-black mx-1">{this.state.count}</span>
+                        <span className="btn btn-black mx-1" onClick={this.increseCount}>+</span>
+                        </div>
 						<Link to="/"><ButtonContainer>back to products</ButtonContainer></Link>
-						<ButtonContainer cart disabled={inCart?true:false} onClick={()=>{
-							value.addToCart(id);
-						}}>{inCart?"in cart":"add to cart"}</ButtonContainer>
+						<ButtonContainer cart disabled={inCart?true:false} onClick={()=>{this.setState({loading: !this.state.loading});setTimeout(()=>{inCart?value.increment(id,this.state.count):value.addToCart(id,this.state.count);this.setState({loading: !this.state.loading});},500)}}>
+							{this.state.loading ? (
+							<>
+							<span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                            <span role="status">Adding...</span></>) : 'add to cart' }
+							</ButtonContainer>
 						</div>
 						</div>
 						</div>

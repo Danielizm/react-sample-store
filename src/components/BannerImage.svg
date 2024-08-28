@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <!-- Banner: Geometric Tech -->
+  <rect width="800" height="200" fill="#CFC6DA"/>
+  <polygon points="0,0 100,100 0,200" fill="#8A7B9F" opacity="0.3"/>
+  <polygon points="800,0 700,100 800,200" fill="#8A7B9F" opacity="0.3"/>
+  <text x="400" y="90" text-anchor="middle" fill="#4A4258" font-family="Arial" font-weight="bold" font-size="36">DANIEL'S STORE</text>
+  <text x="400" y="125" text-anchor="middle" fill="#4A4258" font-family="Arial" font-size="24">NEW ARRIVALS</text>
+  <rect x="300" y="140" width="200" height="30" rx="15" fill="#8A7B9F"/>
+  <text x="400" y="162" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-size="16">SHOP NOW</text>
+</svg>

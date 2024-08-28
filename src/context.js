@@ -44,13 +44,13 @@ class ProductProvider extends React.Component {
         });
     }
 
-    addToCart = (id)=>{
+    addToCart = (id,num = 1)=>{
         const tempProducts = [...this.state.products];
         //const index = tempProducts.indexOf(this.getItem(id));
         //const product = tempProducts[index];
         const product = this.getItem(id);
         product.inCart = true;
-        product.count = 1;
+        product.count = num;
         product.total += product.price;
         this.setState(()=>{
             return {products:tempProducts,cart:[...this.state.cart,product]}
@@ -71,13 +71,13 @@ class ProductProvider extends React.Component {
         });
     }
 
-    increment = (id) => {
+    increment = (id,num = 1) => {
         let tempCart = [...this.state.cart];
         //const selectedProduct = tempCart.find(item=>item.id === id);
         //const index = tempCart.indexOf(selectedProduct);
         //const product = tempCart[index];
         const product = this.getItem(id);
-        product.count += 1;
+        product.count += num;
         product.total = product.count * product.price;
         this.setState(()=>{
             return {cart:tempCart}

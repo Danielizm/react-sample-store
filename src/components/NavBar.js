@@ -26,6 +26,7 @@ const NavWrapper = styled.nav`
 position:sticky;
 top:0;
 z-index:100;
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
 background:var(--mainWhite)!important;
 display:flex;
 justify-content: space-between;
