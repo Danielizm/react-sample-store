@@ -43,7 +43,7 @@ export default class Details extends Component {
                         <span className="btn btn-black mx-1" onClick={this.increseCount}>+</span>
                         </div>
 						<Link to="/"><ButtonContainer>back to products</ButtonContainer></Link>
-						<ButtonContainer cart disabled={inCart?true:false} onClick={()=>{this.setState({loading: !this.state.loading});setTimeout(()=>{inCart?value.increment(id,this.state.count):value.addToCart(id,this.state.count);this.setState({loading: !this.state.loading});},500)}}>
+						<ButtonContainer cart onClick={()=>{this.setState({loading: !this.state.loading});setTimeout(()=>{inCart?value.increment(id,this.state.count):value.addToCart(id,this.state.count);this.setState({loading: !this.state.loading});},500)}}>
 							{this.state.loading ? (
 							<>
 							<span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>

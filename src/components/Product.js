@@ -15,7 +15,7 @@ export default class Product extends Component{
 				<div className="img-container p-5" onClick={()=>value.handleDetail(id)}>
 				   <img src={img} alt="product" className="card-img-top"/>
 				   <div className='card-btns'>
-				   <Link to="/details"><button>View Details</button></Link>
+				   <Link to="/details" className="mb-2"><button>View Details</button></Link>
 				   <button className="" onClick={()=>{inCart ? value.increment(id) : value.addToCart(id);value.openModal(id);}}>
 				   Add to Cart
 				   </button>
@@ -62,6 +62,8 @@ inset:0;
 background:rgba(255,255,255,.6);
 flex-direction:column;
 align-items:center;
+justify-content:center;
+button{background:var(--mainDark);color:var(--mainWhite)}
 }
 
 `;
