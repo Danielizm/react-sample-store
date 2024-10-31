@@ -12,7 +12,7 @@ export default class Details extends Component {
 		this.setState({count: this.state.count + 1});
 	}
 	decreseCount = () => {
-		this.state.count < 1 ? this.setState({count: 1}) : this.setState({count: this.statecount - 1});
+		this.state.count === 1 ? this.setState({count: 1}) : this.setState({count: this.state.count - 1});
 	}
 	setLoading = () => {
 		this.setState({loading: !this.state.loading});
