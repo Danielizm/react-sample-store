@@ -15,11 +15,11 @@ class ProductProvider extends React.Component {
         cartSubtotal:0,
         cartTax:0,
         cartTotal:0,
+        cartCount:0
     }
 
     componentDidMount(){
         this.setProducts();
-        console.log(this.state.products);
     }
 
     setProducts = ()=>{
@@ -54,8 +54,8 @@ class ProductProvider extends React.Component {
         product.count = num;
         product.total += product.price;
         this.setState(()=>{
-            return {products:tempProducts,cart:[...this.state.cart,product]}
-        },()=>{this.addTotal();console.log(this.state.cart);});
+            return {products:tempProducts,cart:[...this.state.cart,product],cartCount:this.state.cartCount + num}
+        },()=>{this.addTotal();});
 
     }
 
@@ -93,21 +93,24 @@ class ProductProvider extends React.Component {
         product.count += num;
         product.total = product.count * product.price;
         this.setState(()=>{
-            return {cart:tempCart}
+            return {cart:tempCart,cartCount:this.state.cartCount + num}
         },()=>{this.addTotal()});
     }
 
-    decrement = (id) => {
+    decrement = (id,num = 1) => {
         let tempCart = [...this.state.cart];
         //const selectedProduct = tempCart.find(item=>item.id === id);
         //const index = tempCart.indexOf(selectedProduct);
         //const product = tempCart[index];
         const product = this.getItem(id);
-        product.count -= 1;
-        if(product.count === 0){this.removeItem(id)}else{
+        product.count -= num;
+        if(product.count === 0){
+            this.removeItem(id);
+            this.setState(()=>{return {cartCount:this.state.cartCount - num}})
+        }else{
         product.total = product.count * product.price;
         this.setState(()=>{
-            return {cart:tempCart}
+            return {cart:tempCart,cartCount:this.state.cartCount - num}
         },()=>{this.addTotal()});
         }
     }
@@ -119,17 +122,18 @@ class ProductProvider extends React.Component {
         //const index = tempProducts.indexOf(this.getItem(id));
         //const removedItem = tempProducts[index];
         const removedItem = this.getItem(id);
+        const temp = removedItem.count;
         removedItem.inCart = false;
         removedItem.count = 0;
         removedItem.total = 0;
         this.setState(()=>{
-            return {products:tempProducts,cart:tempCart};
+            return {products:tempProducts,cart:tempCart,cartCount:this.state.cartCount - temp};
         },()=>{this.addTotal()});
     }
 
     clearCart = () => {
         this.setState(()=>{
-            return {cart:[]}
+            return {cart:[],cartCount:0}
         },()=>{
             this.setProducts();
             this.addTotal();

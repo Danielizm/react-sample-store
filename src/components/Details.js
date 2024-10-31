@@ -46,7 +46,7 @@ export default class Details extends Component {
 						<ButtonContainer cart onClick={()=>{this.setState({loading: !this.state.loading});setTimeout(()=>{inCart?value.increment(id,this.state.count):value.addToCart(id,this.state.count);this.setState({loading: !this.state.loading});},500)}}>
 							{this.state.loading ? (
 							<>
-							<span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+							<span className="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
                             <span role="status">Adding...</span></>) : 'add to cart' }
 							</ButtonContainer>
 						</div>
