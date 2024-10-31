@@ -11,14 +11,14 @@ export default class Modal extends React.Component {
             <ProductConsumer>
                 {(value)=>{
                     const {modalOpen,modalProduct} = value;
-                    const {img,title, price} = value.modalProduct;
+                    const {img,title, price} = modalProduct;
                     if(!modalOpen){return null;}
                     else{ return(
                         <ModalContainer>
                             <div className="container">
                             <div className="row">
                             <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize">
-                            <h5>Item add to the cart</h5>
+                            <h5>Item added to the cart</h5>
                             <img src={img} className="img-fluid" alt="product"/>
                             <h5>{title}</h5>
                             <h5 className="text-muted">price : $ {price}</h5>

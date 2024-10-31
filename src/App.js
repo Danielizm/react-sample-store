@@ -8,6 +8,7 @@ import Cart from './components/Cart/Cart';
 import Default from './components/Default';
 import Details from './components/Details';
 import ProductModal from './components/ProductModal'
+import CartModal from './components/CartModal';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route element={<Default/>} />
         </Routes>
         <ProductModal/>
+        <CartModal />
       <Footer />
     </div>
   );

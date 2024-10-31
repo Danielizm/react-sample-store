@@ -32,11 +32,16 @@ body{
   color: var(--mainWhite)!important;
 }
 
+.cart-icon img{
+  width:35px;
+}
+
 button{
   appearance: none;
   font-size: 1.3rem;
   min-width: 120px;
   background: none;
+  text-transform: uppercase;
 }
 
 footer{

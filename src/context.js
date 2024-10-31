@@ -11,9 +11,10 @@ class ProductProvider extends React.Component {
         cart:[],
         modalOpen:false,
         modalProduct:detailProduct,
+        cartmodalOpen:false,
         cartSubtotal:0,
         cartTax:0,
-        cartTotal:0
+        cartTotal:0,
     }
 
     componentDidMount(){
@@ -61,13 +62,25 @@ class ProductProvider extends React.Component {
     openModal = (id) => {
         const product = this.getItem(id);
         this.setState(()=>{
-            return {modalOpen:true, modalProduct:product};
+            return {modalOpen:true, modalProduct:product,cartmodalOpen:false};
         });
     }
 
     closeModal = () =>{
         this.setState(()=>{
             return {modalOpen:false}
+        });
+    }
+
+    openCartModal = () => {
+        this.setState(()=>{
+            return {cartmodalOpen:true};
+        });
+    }
+
+    closeCartModal = () =>{
+        this.setState(()=>{
+            return {cartmodalOpen:false}
         });
     }
 
@@ -142,6 +155,8 @@ class ProductProvider extends React.Component {
                 addToCart:this.addToCart,
                 openModal:this.openModal,
                 closeModal:this.closeModal,
+                openCartModal:this.openCartModal,
+                closeCartModal:this.closeCartModal,
                 increment:this.increment,
                 decrement:this.decrement,
                 removeItem:this.removeItem,
@@ -155,4 +170,4 @@ class ProductProvider extends React.Component {
 
 const ProductConsumer = ProductContext.Consumer;
 
-export { ProductProvider, ProductConsumer }
+export { ProductContext, ProductProvider, ProductConsumer }

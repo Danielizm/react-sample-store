@@ -8,7 +8,7 @@ const CartItem = ({item,value}) => {
     <div className="col-10 mx-auto col-lg-2">
     <img src={img} alt="product" style={{width:"5rem",height:"5rem"}} className="img-fluid"/>
     </div>
-    <div className="col-10 mx-auto col-lg-2">
+    <div className="col-10 mx-auto col-lg-2 title">
     <span className="d-lg-none">product : </span>
     {title}
     </div>
